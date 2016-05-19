@@ -19,7 +19,11 @@ const defaultState = {
 };
 
 // Create store
-const store = createStore(rootReducer, defaultState);
+const store = createStore(
+	rootReducer,
+	defaultState,
+	window.devToolsExtension ? window.devToolsExtension() : undefined
+);
 
 export const history = syncHistoryWithStore(browserHistory, store);
 
