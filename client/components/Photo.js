@@ -16,7 +16,7 @@ const Photo = React.createClass({
 					<CSSTransitionGroup
 						transitionName="like"
 						transitionEnterTimeout={500}
-						transitionLeaveTimeout={500} >
+						transitionLeaveTimeout={500}>
 						<span
 							key={post.likes}
 							className="likes-heart">
@@ -27,7 +27,7 @@ const Photo = React.createClass({
 				<figcaption>
 					<p>{post.caption}</p>
 					<div className="control-buttons">
-						<button className="likes">
+						<button onClick={this.props.incrementLikes.bind(null, i)} className="likes">
 							&hearts; {post.likes}
 						</button>
 						<Link
